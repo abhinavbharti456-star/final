@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday My Rose 🌹</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #e5baff, #f7e0ff);
+    color: #5c2d91;
+    text-align: center;
+  }
+
+  /* Scene containers */
+  .scene { display: none; width: 100%; height: 100vh; position: absolute; top: 0; left: 0; }
+
+  /* Scene 1 */
+  #scene1 h1 {
+    font-size: 3em;
+    margin-top: 40vh;
+    opacity: 0;
+    animation: fadeInText 3s forwards;
+  }
+  @keyframes fadeInText {
+    to { opacity: 1; transform: scale(1.1); }
+  }
+
+  .balloon {
+    position: absolute;
+    width: 60px;
+    animation: fall 6s linear forwards;
+  }
+  @keyframes fall {
+    0% { top: -100px; opacity: 0; }
+    20% { opacity: 1; }
+    100% { top: 110%; opacity: 0; }
+  }
+
+  .teddy {
+    position: absolute;
+    bottom: 0;
+    left: -150px;
+    width: 150px;
+    animation: walkIn 5s forwards;
+  }
+  @keyframes walkIn {
+    to { left: 40%; }
+  }
+
+  .cake {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    opacity: 0;
+    animation: appear 5s 4s forwards;
+  }
+  @keyframes appear { to { opacity: 1; } }
+
+  .letters {
+    opacity: 0;
+    animation: fadeIn 2s 7s forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  .action-btn {
+    display: none;
+    margin-top: 20px;
+    background-color: #b47cff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .petal {
+    position: absolute;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: petalFall 6s linear forwards;
+  }
+  @keyframes petalFall {
+    to { top: 100%; transform: rotate(720deg); opacity: 0; }
+  }
+
+  /* Scene 2 */
+  #scene2 {
+    display: none;
+    padding: 20px;
+    color: #5c2d91;
+  }
+  #scene2 h2 { font-size: 2.2em; margin-top: 40px; }
+  #scene2 p { max-width: 700px; margin: 20px auto; font-size: 1.1em; line-height: 1.6em; }
+  #nextToProposal {
+    background-color: #b47cff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  /* Scene 3 */
+  #scene3 { display: none; }
+  .yesno {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  button {
+    background-color: #b47cff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover { background-color: #a35eff; }
+
+</style>
+</head>
+<body>
+
+<audio id="bgmusic" src="Connie Francis - Pretty Little Baby (Official Audio).mp3" autoplay loop></audio>
+
+<!-- Scene 1 -->
+<div id="scene1" class="scene" style="display:block;">
+  <h1 id="hbText">Happy Birthday Rose 🌹</h1>
+  <img src="teddy.png" class="teddy" id="teddy">
+  <img src="cake.png" class="cake" id="cake">
+  <div class="letters" id="letters"><h3>My Pretty Little Baby 💖</h3></div>
+  <button class="action-btn" id="blowBtn">Blow Candles 🎂</button>
+</div>
+
+<!-- Scene 2 -->
+<div id="scene2" class="scene">
+  <h2>💌 From Your Puchka</h2>
+  <p>
+    My baby, my wifey, my everything — happy birthday to the woman who owns not just my heart, but my whole damn soul. Every day with you feels like a dream I never want to wake up from, and on your special day, I just want to pour out everything that's been sitting in my heart.
+
+You have no idea how much I miss you all day. It's insane. I'll be doing something random, and suddenly your smile flashes in my mind, your laugh echoes somewhere in my head, and boom — I'm lost. I swear even the air feels incomplete without you around. I crave your presence, your warmth, that soft touch that drives me crazy every single time.
+
+I just want to hold you close, wrap my arms around your waist, feel your heartbeat against mine, and never let go. The way you fit perfectly in my arms — god, that's home. Nothing in this world compares to that feeling.
+
+You are my peace and my chaos, my calm and my madness. You're the reason I smile so effortlessly, the reason I believe love can actually be this deep, this beautiful, this addictive. You've changed everything for me, Rose. You've made my world brighter, my nights sweeter, and my heart softer.
+
+And let's be real — you also make my thoughts dangerously naughty 😏 because every time I think of you, I can't help imagining your touch, your scent, your lips... everything. You've completely spoiled me — now nothing feels right unless it's you.
+
+I just want to be there with you, to hold you from behind, whisper "happy birthday" in your ear, kiss your neck, and feel you melt into me. You deserve to be spoiled, loved, pampered, and kissed endlessly today (and every day).
+
+So here's to you, my Rose — the love of my life, my heartbeat, my reason for everything. I'm so damn lucky to be yours. I miss you like crazy, and I can't wait till I get to hug you tight and remind you in person just how much I love you.
+
+  </p>
+  <button id="nextToProposal">Next →</button>
+</div>
+
+<!-- Scene 3 -->
+<div id="scene3" class="scene">
+  <h2>Will You Be Mine Forever, Rose? 💍</h2>
+  <div class="yesno">
+    <button id="yesBtn">Yes 💞</button>
+    <button id="noBtn">No 😢</button>
+  </div>
+</div>
+
+<script>
+  const scene1 = document.getElementById('scene1');
+  const scene2 = document.getElementById('scene2');
+  const scene3 = document.getElementById('scene3');
+  const blowBtn = document.getElementById('blowBtn');
+  const letters = document.getElementById('letters');
+
+  // Balloons
+  for (let i=0;i<10;i++){
+    const b=document.createElement('div');
+    b.classList.add('balloon');
+    b.innerHTML='🎈';
+    b.style.left=Math.random()*90+'%';
+    b.style.animationDelay=i+'s';
+    scene1.appendChild(b);
+  }
+
+  // Show text & teddy actions
+  setTimeout(()=>{ letters.style.opacity=1; blowBtn.style.display='inline-block'; },8000);
+
+  // Button to blow candles and cut cake
+  blowBtn.addEventListener('click',()=>{
+    blowBtn.style.display='none';
+    // petals
+    for(let i=0;i<30;i++){
+      const p=document.createElement('div');
+      p.classList.add('petal');
+      p.style.left=Math.random()*100+'%';
+      p.style.background='rgb('+(200+Math.random()*55)+','+(100+Math.random()*50)+','+(150+Math.random()*100)+')';
+      p.style.animationDelay=i*0.2+'s';
+      scene1.appendChild(p);
+    }
+    setTimeout(()=>{
+      scene1.style.display='none';
+      scene2.style.display='block';
+    },6000);
+  });
+
+  // Move to proposal
+  document.getElementById('nextToProposal').addEventListener('click',()=>{
+    scene2.style.display='none';
+    scene3.style.display='block';
+  });
+
+  // Proposal logic
+  const noBtn=document.getElementById('noBtn');
+  const yesBtn=document.getElementById('yesBtn');
+  noBtn.addEventListener('click',()=>alert("😢 Pretty please say yes, my Rose!"));
+  yesBtn.addEventListener('click',()=>{
+    document.body.innerHTML=`<h1>💍 I Love You, My Rose 💍</h1><p>Forever yours, your Puchka ❤️</p>`;
+  });
+</script>
+
+</body>
+</html>
